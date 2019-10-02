@@ -1,0 +1,9 @@
+if [ "$#" -lt 2 ]
+then
+  echo "Usage: $0 <IMAGE> <Tag>"
+  exit 1
+fi
+IMAGE=$1
+TAG=$2
+docker build -t kingting/${IMAGE}:$TAG .
+echo "Date: `date` Tag: ${TAG} " >> .history
